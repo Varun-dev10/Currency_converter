@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 class CurrencyConverterMaterialPage extends StatelessWidget {
   const CurrencyConverterMaterialPage({super.key});
   //TimeOfDay get time => TimeOfDay.now();
+
   @override
   Widget build(BuildContext context) {
     /// [BuildContext] tells the flutter frame work that this currency converter widget is found here
     ///  It tells the location
+
+    double result = 0;
+    final TextEditingController textEditingController = TextEditingController();
 
     const border = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -46,6 +50,22 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
         255,
         255,
       ), //Colors  has predefined color values ,, Color
+
+      appBar: AppBar(
+        title: const Text('Currency Converter'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        elevation: 10,
+        toolbarHeight: 45,
+        shadowColor: const Color.fromARGB(168, 0, 0, 0),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
+        ),
+      ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,19 +81,20 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
             ),
 
             //Text('$time'),
-            // const Text(
-            //   'hero', //main hero text
-            //   style: TextStyle(
-            //     fontSize: 40,
-            //     fontWeight: FontWeight.w500,
-            //     letterSpacing: 3,
-            //     color: Colors.white,
-            //   ),
-            // ),
+            const Text(
+              'hero', //main hero text
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 3,
+                color: Colors.white,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30, bottom: 50),
               child: TextField(
                 //input field
+                controller: textEditingController, // to control the text field
                 textAlign: TextAlign.left,
                 style: textstyle, // declare in build to save memory
                 textInputAction:
@@ -92,11 +113,8 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
               child: ElevatedButton(
                 onPressed: () {
-                  if (kDebugMode) {
-                    debugPrint('Convert button pressed');
-                  }
+                  result = double.parse(textEditingController.text) * 95;
                 }, //on pressed function
-
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(
                     const Color.fromARGB(255, 27, 27, 27),
@@ -118,12 +136,9 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                       50,
                     ), // matches the width pixel for any device
                   ),
-                  elevation: WidgetStateProperty.all(30),
+                  elevation: WidgetStateProperty.all(20),
                   shadowColor: WidgetStateProperty.all(
-                    const Color.fromARGB(255, 0, 0, 0),
-                  ),
-                  overlayColor: WidgetStateProperty.all(
-                    const Color.fromARGB(255, 76, 75, 75).withAlpha(200),
+                    const Color.fromARGB(174, 0, 0, 0),
                   ),
                 ),
 
