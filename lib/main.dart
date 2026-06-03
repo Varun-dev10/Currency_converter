@@ -1,4 +1,6 @@
+import 'package:currency_converter/currency_converter_cupertino_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'currency_converter_material_page.dart';
 
 /* Types of design
@@ -17,6 +19,18 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: CurrencyConverterMaterialPage(),
+    );
+  }
+}
+
+
+class MyCupertinoApp extends StatelessWidget {
+  const MyCupertinoApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      home: CurrencyConverterCupertinoPage(),
     );
   }
 }
