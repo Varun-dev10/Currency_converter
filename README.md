@@ -5,7 +5,7 @@ convert currency values. This project demonstrates the implementation
 of both Material (Android) and Cupertino (iOS) design styles in a single codebase.
 
 ## App Preview
-![App Screenshot](SS/Screenshot_20260605_194005.png)
+<img src="SS/Screenshot_20260605_194005.png" width="400">
 
 ## Features
 - **Dual Design**: Supports both Material Design and Cupertino UI.
