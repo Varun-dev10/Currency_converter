@@ -45,15 +45,14 @@ class _CurrencyConverterMaterialPageState
 
       focusedBorder: border,
       // when the text field is focused, it will show the border defined above
-      enabledBorder:
-          border, // when the text field is enabled but not focused, it will show the border defined above
+      enabledBorder: border // when the text field is enabled but not focused, it will show the border defined above
     );
 
     const textstyle = TextStyle(
       color: Colors.white,
       fontStyle: FontStyle.italic,
       fontSize: 20,
-    ); //TextStyle
+    );
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(
